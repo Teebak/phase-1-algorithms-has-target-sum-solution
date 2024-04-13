@@ -1,4 +1,17 @@
 function hasTargetSum(array, target) {
+  const numMap = {};
+
+  for (const number of array) {
+      const complement = target - number;
+
+      if (numMap[complement]) {
+          return true;
+      }
+
+      numMap[number] = true;
+  }
+
+  return false;
   // Write your algorithm here
 }
 
